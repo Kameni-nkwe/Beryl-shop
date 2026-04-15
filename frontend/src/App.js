@@ -1,53 +1,64 @@
-import { useEffect } from "react";
+import { useState } from "react";
 import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import axios from "axios";
+import { AuthProvider } from "./contexts/AuthContext";
+import { CartProvider } from "./contexts/CartContext";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import WhatsAppButton from "./components/WhatsAppButton";
+import CartSheet from "./components/CartSheet";
+import AuthDialog from "./components/AuthDialog";
+import SearchDialog from "./components/SearchDialog";
+import HomePage from "./pages/HomePage";
+import CatalogPage from "./pages/CatalogPage";
+import AboutPage from "./pages/AboutPage";
+import ContactPage from "./pages/ContactPage";
+import CheckoutPage from "./pages/CheckoutPage";
+import AdminPage from "./pages/AdminPage";
+import OrdersPage from "./pages/OrdersPage";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+function AppContent() {
+  const [authOpen, setAuthOpen] = useState(false);
+  const [authTab, setAuthTab] = useState("login");
+  const [searchOpen, setSearchOpen] = useState(false);
 
-const Home = () => {
-  const helloWorldApi = async () => {
-    try {
-      const response = await axios.get(`${API}/`);
-      console.log(response.data.message);
-    } catch (e) {
-      console.error(e, `errored out requesting / api`);
-    }
+  const openAuth = (tab) => {
+    setAuthTab(tab);
+    setAuthOpen(true);
   };
 
-  useEffect(() => {
-    helloWorldApi();
-  }, []);
-
   return (
-    <div>
-      <header className="App-header">
-        <a
-          className="App-link"
-          href="https://emergent.sh"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4" />
-        </a>
-        <p className="mt-5">Building something incredible ~!</p>
-      </header>
+    <div className="min-h-screen flex flex-col">
+      <Navbar onOpenAuth={openAuth} onOpenSearch={() => setSearchOpen(true)} />
+      <main className="flex-1">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/boutique" element={<CatalogPage />} />
+          <Route path="/a-propos" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
+          <Route path="/admin" element={<AdminPage />} />
+          <Route path="/orders" element={<OrdersPage />} />
+        </Routes>
+      </main>
+      <Footer />
+      <WhatsAppButton />
+      <CartSheet />
+      <AuthDialog open={authOpen} onOpenChange={setAuthOpen} defaultTab={authTab} />
+      <SearchDialog open={searchOpen} onOpenChange={setSearchOpen} />
     </div>
   );
-};
+}
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />}>
-            <Route index element={<Home />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <AuthProvider>
+        <CartProvider>
+          <AppContent />
+        </CartProvider>
+      </AuthProvider>
+    </BrowserRouter>
   );
 }
 

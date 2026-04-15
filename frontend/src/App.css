@@ -1,34 +1,109 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* Beryl Shop - Component Styles */
+
+/* Marquee ribbon */
+.marquee-ribbon {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.875rem;
+  background-color: #FFF1E6;
+  color: #2A2421;
+  padding: 0.75rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+/* Product card image zoom */
+.product-image-wrapper {
+  overflow: hidden;
+  background-color: #F5F5F0;
+}
+.product-image-wrapper img {
+  transition: transform 0.7s ease-in-out;
+}
+.product-image-wrapper:hover img {
+  transform: scale(1.05);
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+/* Hero overlay */
+.hero-overlay {
+  background: linear-gradient(to right, rgba(250, 250, 250, 0.85), rgba(250, 250, 250, 0.3));
 }
 
-.App-link {
-    color: #61dafb;
+/* Animate entrance */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-fade-in-up-delay-1 {
+  animation: fadeInUp 0.6s ease-out 0.1s forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-up-delay-2 {
+  animation: fadeInUp 0.6s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-up-delay-3 {
+  animation: fadeInUp 0.6s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+/* WhatsApp floating button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 100;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #25D366;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+}
+
+/* Badge for cart count */
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background-color: #2A2421;
+  color: white;
+  font-size: 0.625rem;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+/* Overline text style */
+.overline {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  font-weight: 500;
+  font-family: 'Outfit', sans-serif;
 }
