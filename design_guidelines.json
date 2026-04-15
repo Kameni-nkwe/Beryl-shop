@@ -1,0 +1,134 @@
+{
+  "project_name": "Beryl Shop",
+  "domain": "E-commerce (Fashion)",
+  "theme": "Light",
+  "archetype": "Archetype 3 (Pastel & Soft) mixed with Editorial Fashion",
+  "colors": {
+    "background": "#FAFAFA",
+    "surface": "#FFF1E6",
+    "primary": "#E8D1C5",
+    "secondary": "#EDDCD2",
+    "text_primary": "#1A1A1A",
+    "text_secondary": "#5C5C5C",
+    "accent": "#2A2421",
+    "border": "rgba(26, 26, 26, 0.05)",
+    "rules": [
+      "No pure black or white; use tinted neutrals.",
+      "CTA buttons must use the accent color (#2A2421) with white text for high contrast.",
+      "Avoid teal and purple."
+    ]
+  },
+  "typography": {
+    "headings": {
+      "family": "Playfair Display, serif",
+      "weights": ["400", "500", "600"],
+      "tracking": "tracking-tight"
+    },
+    "body": {
+      "family": "Outfit, sans-serif",
+      "weights": ["300", "400", "500"],
+      "tracking": "tracking-normal"
+    },
+    "rules": [
+      "H1 size cap at text-6xl.",
+      "Overlines must be uppercase, tiny, wide spacing (tracking-[0.2em]).",
+      "Do not use Inter for headings."
+    ]
+  },
+  "layout_and_spacing": {
+    "spacing_scale": "Generous: p-6, p-12, p-24.",
+    "grid_strategy": "Bento Grid (Mode A: Tetris) for categories and featured products. Asymmetric layouts.",
+    "container_rules": [
+      "Containers with borders must have internal padding.",
+      "Max image height on mobile: 80vh."
+    ]
+  },
+  "components": {
+    "navigation": {
+      "style": "Crystal Glassmorphism",
+      "classes": "sticky top-0 z-50 backdrop-blur-xl bg-[#FAFAFA]/70 border-b border-[#1A1A1A]/5"
+    },
+    "buttons": {
+      "primary": "bg-[#2A2421] text-white rounded-none hover:bg-[#1A1A1A] transition-colors",
+      "secondary": "bg-[#E8D1C5] text-[#1A1A1A] rounded-none hover:bg-[#EDDCD2] transition-colors"
+    },
+    "cards": {
+      "style": "Flat, cardless, minimal.",
+      "classes": "bg-transparent border-none overflow-hidden group",
+      "image_wrapper": "overflow-hidden bg-[#F5F5F0]",
+      "image_hover": "group-hover:scale-105 transition-transform duration-700 ease-in-out"
+    },
+    "forms_and_inputs": {
+      "strategy": "Shadcn UI, highly customized. Square corners (rounded-none), soft pastel backgrounds for inputs, dark borders on focus."
+    },
+    "marquee": {
+      "style": "The Editorial Ribbon",
+      "classes": "font-serif text-sm bg-[#FFF1E6] text-[#2A2421] py-3 uppercase tracking-[0.2em]"
+    }
+  },
+  "media": {
+    "hero_banner": [
+      {
+        "url": "https://static.prod-images.emergentagent.com/jobs/fd3dcf33-0879-40e1-a744-b29c306990e8/images/fc6d76f5c0fd742a7a15a8cd87421ee5c7a120d2f421be9965cd06ab6a4bacd3.png",
+        "category": "Hero Background/Main Visual",
+        "description": "Wide-angle editorial photograph of an elegant fashion model. Use for the main home page banner."
+      }
+    ],
+    "categories": [
+      {
+        "url": "https://images.unsplash.com/photo-1628301048958-b836ceb72116?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxNzV8MHwxfHNlYXJjaHw0fHxmYXNoaW9uJTIwbW9kZWwlMjBlbGVnYW50JTIwcGFzdGVsfGVufDB8fHx8MTc3NjI2OTU2NXww&ixlib=rb-4.1.0&q=85",
+        "category": "Clothing Category",
+        "description": "Woman in pink blazer. Use for Vêtements category block."
+      },
+      {
+        "url": "https://static.prod-images.emergentagent.com/jobs/fd3dcf33-0879-40e1-a744-b29c306990e8/images/33acb73c3330adb685840e126f571aeb6fe2a94122f627f1efb16d962f80eb68.png",
+        "category": "Shoes Category",
+        "description": "Elegant high heels. Use for Chaussures category block."
+      },
+      {
+        "url": "https://static.prod-images.emergentagent.com/jobs/fd3dcf33-0879-40e1-a744-b29c306990e8/images/ba9c4ab2072a1da9fb2bdf0831cb6c8121ef23ed5c1000c0c2f4f90f7cd76526.png",
+        "category": "Accessories Category",
+        "description": "Chic leather handbag. Use for Accessoires category block."
+      }
+    ],
+    "about": [
+      {
+        "url": "https://static.prod-images.emergentagent.com/jobs/fd3dcf33-0879-40e1-a744-b29c306990e8/images/cf7be1e2b88d9c574ab73d2ad4e3986d609eedb1905ec66146a0ee91a0eba47a.png",
+        "category": "About Boutique / Storefront",
+        "description": "Luxury fashion boutique interior. Use for the 'À propos' page or section."
+      }
+    ],
+    "reviews_avatars": [
+      {
+        "url": "https://images.unsplash.com/photo-1763677594421-f58e50cce64d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzl8MHwxfHNlYXJjaHwzfHx3b21hbiUyMHBvcnRyYWl0JTIwc29mdCUyMGxpZ2h0aW5nfGVufDB8fHx8MTc3NjI2OTU1OXww&ixlib=rb-4.1.0&q=85",
+        "category": "Customer Avatar 1",
+        "description": "Woman portrait for customer review."
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1772146345330-e35689b58b2d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzl8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHBvcnRyYWl0JTIwc29mdCUyMGxpZ2h0aW5nfGVufDB8fHx8MTc3NjI2OTU1OXww&ixlib=rb-4.1.0&q=85",
+        "category": "Customer Avatar 2",
+        "description": "Woman smiling in soft light for customer review."
+      }
+    ]
+  },
+  "pages_and_features": {
+    "home": "Hero section with 'L'élégance au quotidien' slogan over the hero image. Marquee below hero. Bento grid for categories (vêtements, accessoires, chaussures). Section for popular products. Testimonials slider.",
+    "catalog": "Product grid with high quality images. Left sidebar for filters (prix, catégorie, popularité) and search bar. Product cards should have 'Ajouter au panier' appearing on hover.",
+    "about": "Story of Beryl Shop, highlighting values (qualité, style, accessibilité). Use the boutique interior image. Layout should be editorial, with large overlapping text and images.",
+    "contact": "Contact form using Shadcn. Clickable phone (+237 655 24 10 11). Google Maps integration embed. Location: Douala. Open 24/7.",
+    "cart_and_checkout": "Dynamic slide-out cart (Shadcn Sheet). Checkout flow with options for Mobile Money and Credit Card. Order confirmation modal.",
+    "auth": "Login/Signup dialogs or pages. Include Guest checkout option.",
+    "admin": "Admin dashboard using Shadcn Table for products, cardless sleek layout, Archetype 4 (Swiss & High Contrast) styling specifically for admin to separate it from the soft consumer UI.",
+    "extras": "Floating WhatsApp button (fixed bottom right). Newsletter signup section in the footer."
+  },
+  "instructions_to_main_agent": [
+    "All interactive elements MUST have data-testid attributes (e.g., data-testid='add-to-cart-button').",
+    "Use standard HTML/Tailwind for marketing layout structures, avoiding rigid Shadcn wrappers for sections.",
+    "Use customized Shadcn UI for forms, dialogs, dropdowns, and sheets.",
+    "Always use the media URLs provided in this JSON; NEVER use placeholders like via.placeholder.com.",
+    "Ensure APCA accessibility contrast ratios, especially for the pastel buttons (use Dark Mocha/Charcoal text/backgrounds where necessary).",
+    "Install and use lucide-react for icons (WhatsApp, Cart, User, etc).",
+    "Use react-fast-marquee for the 'L'élégance au quotidien' editorial ribbon.",
+    "CRITICAL: The codebase uses .js/.jsx files. Do not use TypeScript (.ts/.tsx) or add types to the code."
+  ]
+}
